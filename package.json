@@ -1,6 +1,6 @@
 {
   "name": "fast-json-body",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Parse your json body at max speed and safely.",
   "main": "json-body.js",
   "scripts": {
@@ -16,7 +16,9 @@
     "json",
     "body",
     "fast",
-    "request"
+    "request",
+    "parse",
+    "speed"
   ],
   "author": "Tomas Della Vedova - @delvedor (http://delved.org)",
   "license": "MIT",
@@ -24,13 +26,10 @@
     "url": "https://github.com/delvedor/fast-json-body/issues"
   },
   "homepage": "https://github.com/delvedor/fast-json-body#readme",
-  "dependencies": {
-    "fast-json-parse": "^1.0.2"
-  },
   "devDependencies": {
-    "autocannon": "^0.14.1",
-    "request": "^2.75.0",
-    "standard": "^8.4.0",
-    "tap": "^7.1.2"
+    "autocannon": "^0.16.4",
+    "request": "^2.81.0",
+    "standard": "^10.0.1",
+    "tap": "^10.3.2"
   }
 }
