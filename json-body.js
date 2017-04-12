@@ -1,14 +1,10 @@
 'use strict'
 
-const fastJson = require('fast-json-parse')
-
 function jsonBody (request, callback) {
   var body = ''
-  request
-    .on('error', onError)
-    .on('data', onData)
-    .on('end', onEnd)
-
+  request.on('error', onError)
+  request.on('data', onData)
+  request.on('end', onEnd)
   function onError (err) {
     callback(err, null)
   }
@@ -16,8 +12,14 @@ function jsonBody (request, callback) {
     body += chunk
   }
   function onEnd () {
-    body = fastJson(body)
-    callback(body.err, body.value)
+    setImmediate(parse, body)
+  }
+  function parse (json) {
+    try {
+      callback(null, JSON.parse(body))
+    } catch (err) {
+      callback(err, null)
+    }
   }
 }
 
